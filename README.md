@@ -2,95 +2,123 @@
 
 🧠 Overview
 
-This frontend is a modern web interface for the AI Code Reviewer system.
+This frontend is a modern, interactive web interface for the AI Code Reviewer system.
 
-Users can:
+It provides a real-time coding experience where users can write Python code, analyze it instantly, and receive structured feedback powered by a hybrid backend (AST + AI).
 
-- Write Python code
-- Analyze it in real-time
-- View issues, score, and suggestions
-- Get improved code from AI
+The UI is designed for clarity, responsiveness, and developer-friendly interaction.
 
 ---
 
 ⚙️ Tech Stack
 
-- Next.js (App Router)
-- TypeScript
-- Tailwind CSS
-- Monaco Editor
+- Framework: Next.js (App Router)
+- Language: TypeScript
+- Styling: Tailwind CSS
+- Editor: Monaco Editor
 
 ---
 
-🧩 Features
+🧩 Core Features
 
 🧑‍💻 Code Editor
 
-- Monaco Editor
+- Integrated Monaco Editor (VS Code-like experience)
 - Python syntax highlighting
-- Real coding experience
+- Smooth and responsive editing
 
 ---
 
 🚀 Analyze Flow
 
-- Sends code → backend
-- Displays loading state
+- Sends code to backend via API
+- Displays loading state for better UX
 - Handles errors gracefully
+- Provides seamless interaction between frontend and backend
 
 ---
 
 📊 Score System
 
-- Dynamic score (0–100)
+- Dynamic scoring system (0–100)
+- Visual feedback using color indicators:
 
 Score Range| Color
-> 80| Green
-50–80| Yellow
-< 50| Red
+> 80| 🟢 Green
+50–80| 🟡 Yellow
+< 50| 🔴 Red
+
+👉 Helps users quickly understand code quality
 
 ---
 
 ⚠️ Issues Panel
 
-- Displays detected issues
-- Clean structured UI
+- Displays detected issues from backend
+- Clean and structured UI
+- Easy-to-understand error messages
 
 ---
 
 💡 Suggestions Panel
 
-- AI-generated suggestions
-- Easy to read format
+- AI-generated recommendations
+- Clear and actionable insights
+- Improves code readability and performance
 
 ---
 
-🧠 Improved Code
+🧠 Improved Code Output
 
-- Syntax-highlighted output
-- Copy button
+- Syntax-highlighted improved code
+- One-click Copy button
+- Clean and readable formatting
 
 ---
 
-🧪 Test Case System (🔥 Key Feature)
+🧪 Test Case System (🔥 Standout Feature)
 
-- Side dropdown panel
-- 10 predefined test cases
-- “Use” → loads into editor
-- “Copy” → clipboard
+- Side dropdown panel for quick testing
+- Includes 10 predefined test cases
+- “Use” → loads code into editor instantly
+- “Copy” → copies test case to clipboard
+
+👉 Enables quick validation and demo-ready experience
 
 ---
 
 🔗 API Integration
 
-POST /analyze
+- Endpoint: "POST /analyze"
+- Sends user code to backend
+- Receives:
+  - Score
+  - Issues
+  - Suggestions
+  - Improved Code
 
 ---
 
-▶️ Run Frontend
+🎯 What This Frontend Achieves
 
-Commands:
+✔ Real-time code analysis experience
+✔ Clean visualization of complex backend data
+✔ Smooth user interaction and feedback loop
+✔ Interactive testing environment
+✔ Developer-friendly UI with strong UX focus
+
+---
+
+▶️ Run Frontend Locally
+
 npm install
 npm run dev
+
+---
+
+🏁 Final Note
+
+This frontend is not just a UI —
+it is a developer-centric interface designed to make AI-powered code analysis intuitive, interactive, and efficient.
 
 ---
