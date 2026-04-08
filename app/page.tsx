@@ -25,7 +25,7 @@ type ResultType = {
   ai_review: AIReview;
 };
 
-/* ✅ ADD TEST CASES */
+/* TEST CASES */
 const testCases = [
   {
     title: "Test 1: Missing Colon",
@@ -217,7 +217,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* RESULT (UNCHANGED) */}
+        {/* RESULT */}
         {result && (
           <div className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 shadow-xl space-y-6">
             <div>
