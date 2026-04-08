@@ -122,16 +122,20 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 p-6 flex justify-center">
+    <div className="w-full flex justify-center">
       <div className="w-full max-w-6xl space-y-6">
-        <h1 className="text-4xl font-bold text-center text-gray-800">
-          🚀 AI Code Reviewer
+        <h1 className="text-4xl md:text-5xl font-bold text-center text-white">
+          AI Code Reviewer
         </h1>
+        <p className="text-center text-gray-400 max-w-xl mx-auto">
+          Analyze your Python code, detect issues, and improve it with
+          AI-powered suggestions.
+        </p>
 
         {/* ✅ EDITOR + SIDE PANEL */}
         <div className="flex gap-4">
           {/* LEFT: EDITOR */}
-          <div className="flex-1 bg-white p-5 rounded-2xl shadow-lg">
+          <div className="flex-1 bg-white/5 backdrop-blur-md p-5 rounded-2xl border border-white/10 shadow-xl">
             <Editor
               height="300px"
               defaultLanguage="python"
@@ -182,7 +186,7 @@ export default function Home() {
             </button>
 
             {showTests && (
-              <div className="mt-2 bg-white p-3 rounded-xl shadow max-h-[300px] overflow-auto space-y-3">
+              <div className="mt-2 bg-white/5 backdrop-blur-md p-3 rounded-xl border border-white/10 shadow max-h-[300px] overflow-auto space-y-3">
                 {testCases.map((test, i) => (
                   <div key={i} className="border p-2 rounded">
                     <h3 className="font-semibold text-sm">{test.title}</h3>
@@ -215,9 +219,9 @@ export default function Home() {
 
         {/* RESULT (UNCHANGED) */}
         {result && (
-          <div className="bg-white p-6 rounded-2xl shadow-lg space-y-6">
+          <div className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 shadow-xl space-y-6">
             <div>
-              <h2 className="text-lg font-semibold text-gray-700">Score</h2>
+              <h2 className="text-lg font-semibold text-white">Score</h2>
               <div className="w-full bg-gray-200 rounded-full h-4 mt-2 overflow-hidden">
                 <div
                   className={`h-4 rounded-full ${
@@ -230,11 +234,11 @@ export default function Home() {
                   style={{ width: `${result.score}%` }}
                 />
               </div>
-              <p className="mt-1 text-sm text-gray-600">{result.score}/100</p>
+              <p className="mt-1 text-sm text-gray-400">{result.score}/100</p>
             </div>
 
             <div>
-              <h2 className="text-lg font-semibold text-gray-700">Issues</h2>
+              <h2 className="text-lg font-semibold text-white">Issues</h2>
               {result.issues.length === 0 ? (
                 <p className="text-green-600 mt-2">✅ No issues</p>
               ) : (
@@ -252,7 +256,7 @@ export default function Home() {
             </div>
 
             <div>
-              <h2 className="text-lg font-semibold text-gray-700">
+              <h2 className="text-lg font-semibold text-white">
                 Suggestions
               </h2>
               <ul className="mt-2 space-y-2">
@@ -269,7 +273,7 @@ export default function Home() {
 
             <div>
               <div className="flex justify-between items-center">
-                <h2 className="text-lg font-semibold text-gray-700">
+                <h2 className="text-lg font-semibold text-white">
                   Improved Code
                 </h2>
                 <button
