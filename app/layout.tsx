@@ -27,18 +27,23 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-screen flex flex-col bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#020617] text-white">
+      <body className="min-h-screen flex flex-col bg-[#1e293b] text-white">
         
-        <header className="flex justify-between items-center px-8 py-4 border-b border-white/10 bg-white/5 backdrop-blur-md">
+        {/* Header */}
+        <header className="flex items-center justify-between px-8 py-4 border-b border-white/10 bg-[#0f172a]">
           <h1 className="text-lg font-semibold">AI Code Reviewer</h1>
-          <p className="text-sm text-gray-400">Devloped BY Udit U Gunagi</p>
+          <p className="text-sm text-gray-400">
+            Developed by Udit U Gunagi
+          </p>
         </header>
 
-        <main className="flex-1 flex items-center justify-center px-4 pb-8">
+        {/* Main Content */}
+        <main className="flex-1 px-4 py-12">
           {children}
         </main>
 
-        <footer className="text-center text-sm text-gray-400 py-4 border-t border-white/10 bg-white/5 backdrop-blur-md">
+        {/* Footer */}
+        <footer className="border-t border-white/10 bg-[#0f172a] py-4 text-center text-white">
           Built with FastAPI • OpenRouter • Next.js
         </footer>
 

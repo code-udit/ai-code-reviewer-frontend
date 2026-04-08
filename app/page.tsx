@@ -256,9 +256,7 @@ export default function Home() {
             </div>
 
             <div>
-              <h2 className="text-lg font-semibold text-white">
-                Suggestions
-              </h2>
+              <h2 className="text-lg font-semibold text-white">Suggestions</h2>
               <ul className="mt-2 space-y-2">
                 {result.ai_review.suggestions.map((s, i) => (
                   <li
