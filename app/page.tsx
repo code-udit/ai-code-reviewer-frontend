@@ -97,22 +97,40 @@ export default function Home() {
   const [result, setResult] = useState<ResultType | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [showTests, setShowTests] = useState(false); // ✅ NEW
+  const [showTests, setShowTests] = useState(false);
+  const [showWakeupMessage, setShowWakeupMessage] = useState(false);
 
   const handleAnalyze = async () => {
-    setLoading(true);
-    setError("");
+    let timer: NodeJS.Timeout | undefined;
 
-    const res = await analyzeCode(code);
+    try {
+      setLoading(true);
+      setError("");
 
-    if (!res.success) {
-      setError(res.message);
+      timer = setTimeout(() => {
+        setShowWakeupMessage(true);
+      }, 5000);
+
+      const res = await analyzeCode(code);
+
+      if (timer) clearTimeout(timer);
+      setShowWakeupMessage(false);
+
+      if (!res.success) {
+        setError(res.message);
+        return;
+      }
+
+      setResult(res.data);
+    } catch {
+      if (timer) clearTimeout(timer);
+      setShowWakeupMessage(false);
+
+      setError("Something went wrong");
+    } finally {
       setLoading(false);
-      return;
+      setShowWakeupMessage(false);
     }
-
-    setResult(res.data);
-    setLoading(false);
   };
 
   const copyCode = () => {
@@ -151,6 +169,22 @@ export default function Home() {
             >
               {loading ? "⏳ Analyzing..." : "Analyze Code"}
             </button>
+            {showWakeupMessage && (
+              <div className="mt-4 rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
+                <p className="font-medium text-amber-300">
+                  Connecting to server...
+                </p>
+
+                <p className="mt-1 text-sm text-amber-200">
+                  The backend is waking up after inactivity. This usually takes
+                  10–20 seconds.
+                </p>
+
+                <p className="mt-1 text-sm text-amber-200">
+                  Thanks for your patience.
+                </p>
+              </div>
+            )}
 
             <button
               onClick={() => {
