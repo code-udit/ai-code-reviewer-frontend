@@ -10,6 +10,19 @@ The UI is designed for clarity, responsiveness, and developer-friendly interacti
 
 ---
 
+## 🔗 Links
+
+### 🌐 Live Demo
+https://ai-code-reviewer-frontend-pi.vercel.app
+
+### 💻 Frontend Repository
+https://github.com/your-username/ai-code-reviewer-frontend
+
+### ⚙️ Backend Repository
+https://github.com/your-username/ai-code-reviewer-backend
+
+---
+
 ⚙️ Tech Stack
 
 - Framework: Next.js (App Router)
