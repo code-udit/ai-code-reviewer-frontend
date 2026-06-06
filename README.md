@@ -1,4 +1,4 @@
-🎨 AI Code Reviewer — Frontend
+# AI Code Reviewer — Frontend
 
 ### 👨‍💻 Developed By
 
