@@ -1,5 +1,9 @@
 🎨 AI Code Reviewer — Frontend
 
+### 👨‍💻 Developed By
+
+**Udit U Gunagi**
+
 🧠 Overview
 
 This frontend is a modern, interactive web interface for the AI Code Reviewer system.
@@ -129,9 +133,14 @@ npm run dev
 
 ---
 
+## 👨‍💻 Author
+
+Developed by **Udit U Gunagi**
+
+---
+
 🏁 Final Note
 
 This frontend is not just a UI —
 it is a developer-centric interface designed to make AI-powered code analysis intuitive, interactive, and efficient.
 
----
